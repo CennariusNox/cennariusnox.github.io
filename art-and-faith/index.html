@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arte y Fe · Art &amp; Faith — Kit de prensa · Clajorix Games</title>
+<meta name="description" content="Kit de prensa de Arte y Fe / Art &amp; Faith: 300 puzzles de arte bíblico en dominio público. Datos, capturas, imágenes en alta resolución y contacto.">
+<meta property="og:title" content="Arte y Fe · Art &amp; Faith — Kit de prensa">
+<meta property="og:description" content="300 puzzles de arte bíblico en dominio público, con su versículo y su historia. Materiales para prensa.">
+<meta property="og:image" content="https://cennariusnox.github.io/art-and-faith/img/feature-es.webp">
+<meta property="og:type" content="website">
+<link rel="icon" href="img/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+  :root{
+    color-scheme: light;
+    --pergamino:#F4ECD8;
+    --marfil:#FBF6EA;
+    --tinta:#2A2015;
+    --sepia:#6E5A3E;
+    --oro:#8A6B22;
+    --indigo:#33405C;
+    --rule:rgba(42,32,21,.28);
+    --measure:66ch;
+    --display:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+    --body:Georgia, "Iowan Old Style", "Times New Roman", serif;
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--pergamino);
+    color:var(--tinta);
+    font-family:var(--body);
+    font-size:1.0625rem;
+    line-height:1.65;
+  }
+
+  /* --- language switching --------------------------------------------- */
+  [data-l]{display:none}
+  html[lang="es"] [data-l="es"],
+  html[lang="en"] [data-l="en"],
+  html[lang="pt"] [data-l="pt"]{display:revert}
+
+  /* --- shell ----------------------------------------------------------- */
+  .wrap{max-width:var(--measure);margin:0 auto;padding:0 1.5rem}
+  main.wrap{padding-bottom:5rem}
+
+  /* --- masthead -------------------------------------------------------- */
+  .masthead{padding:3.5rem 0 2.5rem;text-align:center}
+  .eyebrow{
+    font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--sepia);margin:0 0 1.75rem
+  }
+  .wordmark{
+    font-family:var(--display);
+    font-weight:400;
+    font-size:clamp(2.9rem,9vw,4.75rem);
+    line-height:1;
+    margin:0;
+    letter-spacing:.01em;
+  }
+  .wordmark em{font-style:italic;color:var(--oro)}
+  .thesis{
+    font-family:var(--display);
+    font-size:clamp(1.15rem,3.4vw,1.4rem);
+    color:var(--sepia);
+    margin:1.1rem auto 0;
+    max-width:34ch;
+    line-height:1.45;
+  }
+
+  /* --- language toggle -------------------------------------------------- */
+  .langs{display:flex;gap:.4rem;justify-content:center;margin:2.25rem 0 0}
+  .langs button{
+    font-family:var(--body);
+    font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;
+    padding:.5rem .85rem;
+    background:transparent;
+    color:var(--sepia);
+    border:1px solid var(--rule);
+    border-radius:0;
+    cursor:pointer;
+  }
+  .langs button:hover{color:var(--tinta);border-color:var(--tinta)}
+  .langs button[aria-pressed="true"]{
+    background:var(--indigo);border-color:var(--indigo);color:var(--marfil)
+  }
+
+  /* --- rules and section headings --------------------------------------- */
+  .fleuron{
+    display:flex;align-items:center;gap:1rem;
+    margin:3.25rem 0 1.75rem;
+    color:var(--oro);
+  }
+  .fleuron::before,.fleuron::after{
+    content:"";flex:1;height:1px;background:var(--rule)
+  }
+  .fleuron span{font-size:.7rem;letter-spacing:.2em}
+
+  h2{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:1.65rem;
+    letter-spacing:.01em;
+    margin:0 0 .9rem;
+  }
+  p{margin:0 0 1.1rem}
+  a{color:var(--oro)}
+  a:hover{color:var(--indigo)}
+  :focus-visible{outline:2px solid var(--indigo);outline-offset:3px}
+
+  .lead{font-size:1.1rem}
+  .aside{
+    font-family:var(--display);
+    font-style:italic;
+    font-size:1.3rem;
+    color:var(--sepia);
+    border-left:2px solid var(--oro);
+    padding-left:1.15rem;
+    margin:2rem 0;
+    line-height:1.45;
+  }
+
+  /* --- plates (the signature device) ------------------------------------ */
+  .plate{margin:0 0 2.5rem}
+  .plate .frame{
+    background:var(--marfil);
+    border:1px solid var(--rule);
+    padding:.55rem;
+  }
+  .plate .frame > div{
+    border:1px solid var(--rule);
+    padding:.9rem;
+    display:flex;
+    justify-content:center;
+  }
+  .plate img{display:block;max-width:100%;height:auto}
+  .caption{
+    display:flex;align-items:baseline;gap:.6rem;
+    margin-top:.7rem;
+    font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--sepia);
+  }
+  .caption .num{color:var(--oro);white-space:nowrap}
+  .caption .leader{flex:1;border-bottom:1px dotted var(--rule);transform:translateY(-.2em)}
+
+  /* --- screenshot grid --------------------------------------------------- */
+  .plates{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+    gap:1.75rem;
+  }
+  .plates .plate{margin:0;min-width:0}
+  .plates .frame > div{padding:.5rem}
+  .plates img{width:100%}
+  /* five plates in two columns: the last one sits centred rather than orphaned */
+  @media (min-width:560px){
+    .plates .plate:last-child{
+      grid-column:1 / -1;
+      justify-self:center;
+      width:calc(50% - .875rem);
+    }
+  }
+  .plates .caption{font-size:.62rem;letter-spacing:.13em}
+
+  /* --- colophon (fact sheet) --------------------------------------------- */
+  .colophon{margin:0;padding:0}
+  .colophon .row{
+    display:flex;align-items:baseline;gap:.6rem;
+    padding:.45rem 0;
+    border-bottom:1px solid rgba(42,32,21,.10);
+  }
+  .colophon dt{
+    font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--sepia);margin:0;white-space:nowrap;
+  }
+  .colophon .leader{flex:1;border-bottom:1px dotted var(--rule);transform:translateY(-.25em)}
+  .colophon dd{margin:0;text-align:right}
+  .colophon code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85em}
+
+  /* --- actions ----------------------------------------------------------- */
+  .actions{display:flex;flex-wrap:wrap;gap:.75rem;margin:1.75rem 0 0}
+  .btn{
+    font-family:var(--body);
+    font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+    padding:.85rem 1.35rem;
+    text-decoration:none;
+    border:1px solid var(--tinta);
+    color:var(--tinta);
+    background:transparent;
+  }
+  .btn:hover{background:var(--tinta);color:var(--pergamino)}
+  .btn--gold{border-color:var(--oro);background:var(--oro);color:var(--marfil)}
+  .btn--gold:hover{background:var(--tinta);border-color:var(--tinta);color:var(--pergamino)}
+  .weight{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sepia);margin:.85rem 0 0}
+
+  ul{margin:0 0 1.1rem;padding-left:1.15rem}
+  li{margin-bottom:.35rem}
+
+  footer{
+    border-top:1px solid var(--rule);
+    margin-top:4rem;padding:2rem 0 3rem;
+    font-size:.85rem;color:var(--sepia);text-align:center;
+  }
+  footer p{margin:0 0 .5rem}
+
+  /* --- motion ------------------------------------------------------------ */
+  .rise{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
+  .rise.seen{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .rise{opacity:1;transform:none;transition:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead wrap">
+  <p class="eyebrow">Clajorix Games
+    <span data-l="es">· Kit de prensa</span>
+    <span data-l="en">· Press kit</span>
+    <span data-l="pt">· Kit de imprensa</span>
+  </p>
+
+  <h1 class="wordmark">
+    <span data-l="es">Arte <em>y</em> Fe</span>
+    <span data-l="en">Art <em>&amp;</em> Faith</span>
+    <span data-l="pt">Arte <em>e</em> Fé</span>
+  </h1>
+
+  <p class="thesis">
+    <span data-l="es">300 grabados y pinturas bíblicas en dominio público, armados pieza a pieza.</span>
+    <span data-l="en">300 public-domain biblical engravings and paintings, assembled piece by piece.</span>
+    <span data-l="pt">300 gravuras e pinturas bíblicas em domínio público, montadas peça por peça.</span>
+  </p>
+
+  <nav class="langs" aria-label="Idioma / Language / Idioma">
+    <button type="button" data-set-lang="es" aria-pressed="true">Español</button>
+    <button type="button" data-set-lang="en" aria-pressed="false">English</button>
+    <button type="button" data-set-lang="pt" aria-pressed="false">Português</button>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <figure class="plate rise">
+    <div class="frame"><div>
+      <img id="feature" src="img/feature-es.webp" width="1024" height="500" alt="Arte y Fe — gráfico de portada de Google Play">
+    </div></div>
+    <figcaption class="caption">
+      <span class="num" data-l="es">Portada</span>
+      <span class="num" data-l="en">Key art</span>
+      <span class="num" data-l="pt">Capa</span>
+      <span class="leader"></span>
+      <span>Google Play · 1024 × 500</span>
+    </figcaption>
+  </figure>
+
+  <section>
+    <p class="lead">
+      <span data-l="es">Arte y Fe reúne 300 obras de arte bíblico —grabados de Gustave Doré, láminas de Julius Schnorr von Carolsfeld y otros, todas en dominio público— y las convierte en puzzles. Están organizadas en 15 colecciones que recorren la Biblia de Génesis a Apocalipsis, y al completar cada obra aparece el versículo que la inspiró y la historia de la escena.</span>
+      <span data-l="en">Art &amp; Faith gathers 300 works of biblical art — engravings by Gustave Doré, plates by Julius Schnorr von Carolsfeld and others, all in the public domain — and turns them into puzzles. They are organised into 15 collections running from Genesis to Revelation, and completing an artwork reveals the verse that inspired it along with the story of the scene.</span>
+      <span data-l="pt">Arte e Fé reúne 300 obras de arte bíblica — gravuras de Gustave Doré, pranchas de Julius Schnorr von Carolsfeld e outras, todas em domínio público — e as transforma em quebra-cabeças. Estão organizadas em 15 coleções que percorrem a Bíblia de Gênesis a Apocalipse, e ao completar cada obra aparece o versículo que a inspirou e a história da cena.</span>
+    </p>
+    <p>
+      <span data-l="es">Además de los 300 niveles, la app trae un devocional diario construido sobre 186 salmos, un modo maestro con tableros grandes y una galería donde las obras desbloqueadas se leen con calma y se guardan en el teléfono. Está en español, inglés y portugués, con los versículos en traducciones también en dominio público: Reina-Valera, King James y Almeida.</span>
+      <span data-l="en">Beyond the 300 levels, the app includes a daily devotional built on 186 psalms, a master mode with larger boards, and a gallery where unlocked artworks can be read at leisure and saved to the phone. It ships in English, Spanish and Portuguese, with verses drawn from translations that are themselves in the public domain: King James, Reina-Valera and Almeida.</span>
+      <span data-l="pt">Além dos 300 níveis, o app traz um devocional diário construído sobre 186 salmos, um modo mestre com tabuleiros maiores e uma galeria onde as obras desbloqueadas podem ser lidas com calma e salvas no telefone. Está em português, espanhol e inglês, com os versículos em traduções também em domínio público: Almeida, King James e Reina-Valera.</span>
+    </p>
+
+    <p class="aside">
+      <span data-l="es">No hay cronómetros, ni rachas que romper, ni cuenta atrás. La app no tiene prisa, y esa es la decisión de diseño que la ordena entera.</span>
+      <span data-l="en">There are no timers, no streaks to break, no countdowns. The app is in no hurry, and that single design decision orders everything else in it.</span>
+      <span data-l="pt">Não há cronômetros, nem sequências para manter, nem contagem regressiva. O app não tem pressa, e é essa decisão de design que organiza todo o resto.</span>
+    </p>
+
+    <div class="actions">
+      <a class="btn btn--gold" href="https://play.google.com/store/apps/details?id=com.clajorix.bibliapuzzle">
+        <span data-l="es">Ver en Google Play</span>
+        <span data-l="en">View on Google Play</span>
+        <span data-l="pt">Ver no Google Play</span>
+      </a>
+      <a class="btn" href="mailto:clajorixgames@gmail.com?subject=Art%20%26%20Faith%20-%20press">
+        <span data-l="es">Escribir al estudio</span>
+        <span data-l="en">Email the studio</span>
+        <span data-l="pt">Escrever ao estúdio</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="fleuron"><span>✦</span></div>
+
+  <section>
+    <h2>
+      <span data-l="es">Ficha</span>
+      <span data-l="en">Fact sheet</span>
+      <span data-l="pt">Ficha técnica</span>
+    </h2>
+
+    <dl class="colophon">
+      <div class="row">
+        <dt><span data-l="es">Estudio</span><span data-l="en">Studio</span><span data-l="pt">Estúdio</span></dt>
+        <span class="leader"></span>
+        <dd>Clajorix Games</dd>
+      </div>
+      <div class="row">
+        <dt><span data-l="es">Publicación</span><span data-l="en">Release</span><span data-l="pt">Lançamento</span></dt>
+        <span class="leader"></span>
+        <dd>
+          <span data-l="es">9 de agosto de 2026</span>
+          <span data-l="en">9 August 2026</span>
+          <span data-l="pt">9 de agosto de 2026</span>
+        </dd>
+      </div>
+      <div class="row">
+        <dt><span data-l="es">Plataforma</span><span data-l="en">Platform</span><span data-l="pt">Plataforma</span></dt>
+        <span class="leader"></span>
+        <dd>Android · Google Play</dd>
+      </div>
+      <div class="row">
+        <dt><span data-l="es">Paquete</span><span data-l="en">Package</span><span data-l="pt">Pacote</span></dt>
+        <span class="leader"></span>
+        <dd><code>com.clajorix.bibliapuzzle</code></dd>
+      </div>
+      <div class="row">
+        <dt><span data-l="es">Precio</span><span data-l="en">Price</span><span data-l="pt">Preço</span></dt>
+        <span class="leader"></span>
+        <dd>
+          <span data-l="es">Gratis · compras opcionales US$2,99 y US$4,99</span>
+          <span data-l="en">Free · optional purchases at US$2.99 and US$4.99</span>
+          <span data-l="pt">Grátis · compras opcionais de US$2,99 e US$4,99</span>
+        </dd>
+      </div>
+      <div class="row">
+        <dt><span data-l="es">Idiomas</span><span data-l="en">Languages</span><span data-l="pt">Idiomas</span></dt>
+        <span class="leader"></span>
+        <dd>
+          <span data-l="es">Español · inglés · portugués</span>
+          <span data-l="en">English · Spanish · Portuguese</span>
+          <span data-l="pt">Português · espanhol · inglês</span>
+        </dd>
+      </div>
+      <div class="row">
+        <dt><span data-l="es">Contenido</span><span data-l="en">Content</span><span data-l="pt">Conteúdo</span></dt>
+        <span class="leader"></span>
+        <dd>
+          <span data-l="es">300 niveles · 15 colecciones · 186 salmos</span>
+          <span data-l="en">300 levels · 15 collections · 186 psalms</span>
+          <span data-l="pt">300 níveis · 15 coleções · 186 salmos</span>
+        </dd>
+      </div>
+      <div class="row">
+        <dt><span data-l="es">Clasificación</span><span data-l="en">Audience</span><span data-l="pt">Classificação</span></dt>
+        <span class="leader"></span>
+        <dd>
+          <span data-l="es">Apta para toda la familia</span>
+          <span data-l="en">Suitable for all ages</span>
+          <span data-l="pt">Adequado para toda a família</span>
+        </dd>
+      </div>
+      <div class="row">
+        <dt><span data-l="es">Contacto</span><span data-l="en">Contact</span><span data-l="pt">Contato</span></dt>
+        <span class="leader"></span>
+        <dd><a href="mailto:clajorixgames@gmail.com">clajorixgames@gmail.com</a></dd>
+      </div>
+    </dl>
+  </section>
+
+  <div class="fleuron"><span>✦</span></div>
+
+  <section>
+    <h2>
+      <span data-l="es">Las obras</span>
+      <span data-l="en">The artworks</span>
+      <span data-l="pt">As obras</span>
+    </h2>
+    <p>
+      <span data-l="es">Ninguna imagen del juego es generada: todas son reproducciones de obra en dominio público, acreditadas dentro de la app con su autor, su título y su licencia. El grueso viene de dos cuerpos de trabajo del siglo XIX —los grabados de Doré para la Biblia y las láminas de Schnorr von Carolsfeld—, que se eligieron por la misma razón por la que se siguen reimprimiendo: cuentan la escena de un vistazo.</span>
+      <span data-l="en">None of the images in the game are generated: every one is a reproduction of a public-domain work, credited inside the app with its author, title and licence. Most come from two nineteenth-century bodies of work — Doré's Bible engravings and Schnorr von Carolsfeld's plates — chosen for the same reason they are still reprinted today: they tell the scene at a glance.</span>
+      <span data-l="pt">Nenhuma imagem do jogo é gerada: todas são reproduções de obras em domínio público, creditadas dentro do app com autor, título e licença. A maior parte vem de dois conjuntos do século XIX — as gravuras de Doré para a Bíblia e as pranchas de Schnorr von Carolsfeld —, escolhidos pelo mesmo motivo pelo qual continuam sendo reimpressos: contam a cena num relance.</span>
+    </p>
+    <p>
+      <span data-l="es">Arte y Fe es un proyecto devocional independiente, sin afiliación con ninguna iglesia ni denominación.</span>
+      <span data-l="en">Art &amp; Faith is an independent devotional project, with no affiliation to any church or denomination.</span>
+      <span data-l="pt">Arte e Fé é um projeto devocional independente, sem vínculo com nenhuma igreja ou denominação.</span>
+    </p>
+  </section>
+
+  <div class="fleuron"><span>✦</span></div>
+
+  <section>
+    <h2>
+      <span data-l="es">Capturas</span>
+      <span data-l="en">Screenshots</span>
+      <span data-l="pt">Capturas</span>
+    </h2>
+
+    <div class="plates">
+      <figure class="plate rise">
+        <div class="frame"><div><img class="shot" data-n="1" src="img/es-1.webp" width="480" height="1039" loading="lazy" alt=""></div></div>
+        <figcaption class="caption">
+          <span class="num">I</span><span class="leader"></span>
+          <span data-l="es">Colecciones</span><span data-l="en">Collections</span><span data-l="pt">Coleções</span>
+        </figcaption>
+      </figure>
+      <figure class="plate rise">
+        <div class="frame"><div><img class="shot" data-n="2" src="img/es-2.webp" width="480" height="1039" loading="lazy" alt=""></div></div>
+        <figcaption class="caption">
+          <span class="num">II</span><span class="leader"></span>
+          <span data-l="es">Puzzle</span><span data-l="en">Puzzle</span><span data-l="pt">Quebra-cabeça</span>
+        </figcaption>
+      </figure>
+      <figure class="plate rise">
+        <div class="frame"><div><img class="shot" data-n="3" src="img/es-3.webp" width="480" height="1039" loading="lazy" alt=""></div></div>
+        <figcaption class="caption">
+          <span class="num">III</span><span class="leader"></span>
+          <span data-l="es">Devocional</span><span data-l="en">Devotional</span><span data-l="pt">Devocional</span>
+        </figcaption>
+      </figure>
+      <figure class="plate rise">
+        <div class="frame"><div><img class="shot" data-n="4" src="img/es-4.webp" width="480" height="1039" loading="lazy" alt=""></div></div>
+        <figcaption class="caption">
+          <span class="num">IV</span><span class="leader"></span>
+          <span data-l="es">Galería</span><span data-l="en">Gallery</span><span data-l="pt">Galeria</span>
+        </figcaption>
+      </figure>
+      <figure class="plate rise">
+        <div class="frame"><div><img class="shot" data-n="5" src="img/es-5.webp" width="480" height="1039" loading="lazy" alt=""></div></div>
+        <figcaption class="caption">
+          <span class="num">V</span><span class="leader"></span>
+          <span data-l="es">Ficha de obra</span><span data-l="en">Artwork page</span><span data-l="pt">Ficha da obra</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="fleuron"><span>✦</span></div>
+
+  <section>
+    <h2>
+      <span data-l="es">Kit de prensa</span>
+      <span data-l="en">Press kit</span>
+      <span data-l="pt">Kit de imprensa</span>
+    </h2>
+    <p>
+      <span data-l="es">Un solo archivo con el icono, los gráficos de portada (incluidas versiones en 4K), las quince capturas en los tres idiomas y un documento con los textos listos para citar.</span>
+      <span data-l="en">A single archive with the icon, the key art (4K versions included), all fifteen screenshots across the three languages, and a document with quotable copy.</span>
+      <span data-l="pt">Um único arquivo com o ícone, as artes de capa (incluindo versões em 4K), as quinze capturas nos três idiomas e um documento com os textos prontos para citar.</span>
+    </p>
+    <ul>
+      <li><span data-l="es">Estos materiales se pueden reproducir libremente en artículos y reseñas.</span><span data-l="en">These materials may be reproduced freely in articles and reviews.</span><span data-l="pt">Estes materiais podem ser reproduzidos livremente em artigos e resenhas.</span></li>
+      <li><span data-l="es">Hay códigos de la Edición Completa para reseñar y para sortear entre lectores: basta pedirlos por correo.</span><span data-l="en">Full Edition codes are available for reviewing and for reader giveaways — just ask by email.</span><span data-l="pt">Há códigos da Edição Completa para análise e para sortear entre leitores — basta pedir por e-mail.</span></li>
+    </ul>
+    <div class="actions">
+      <a class="btn btn--gold" href="arte-y-fe-press-kit.zip" download>
+        <span data-l="es">Descargar el kit</span>
+        <span data-l="en">Download the kit</span>
+        <span data-l="pt">Baixar o kit</span>
+      </a>
+      <a class="btn" href="mailto:clajorixgames@gmail.com?subject=Art%20%26%20Faith%20-%20codes">
+        <span data-l="es">Pedir códigos</span>
+        <span data-l="en">Request codes</span>
+        <span data-l="pt">Pedir códigos</span>
+      </a>
+    </div>
+    <p class="weight">ZIP · 18 MB</p>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <p>Clajorix Games · <a href="https://cennariusnox.github.io/">clajorixgames</a> · <a href="https://cennariusnox.github.io/arte-y-fe-legal/">
+    <span data-l="es">Política de privacidad</span><span data-l="en">Privacy policy</span><span data-l="pt">Política de privacidade</span>
+  </a></p>
+  <p>
+    <span data-l="es">Las obras reproducidas están en dominio público y acreditadas dentro de la app.</span>
+    <span data-l="en">The artworks reproduced are in the public domain and credited inside the app.</span>
+    <span data-l="pt">As obras reproduzidas estão em domínio público e creditadas dentro do app.</span>
+  </p>
+</footer>
+
+<script>
+(function () {
+  var buttons = document.querySelectorAll('[data-set-lang]');
+  var feature = document.getElementById('feature');
+  var shots = document.querySelectorAll('.shot');
+
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    buttons.forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.dataset.setLang === lang));
+    });
+    feature.src = 'img/feature-' + lang + '.webp';
+    shots.forEach(function (img) {
+      img.src = 'img/' + lang + '-' + img.dataset.n + '.webp';
+    });
+    try { localStorage.setItem('af-lang', lang); } catch (e) {}
+  }
+
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { setLang(b.dataset.setLang); });
+  });
+
+  var stored;
+  try { stored = localStorage.getItem('af-lang'); } catch (e) {}
+  var initial = stored || (navigator.language || 'es').slice(0, 2).toLowerCase();
+  if (initial !== 'es' && initial !== 'en' && initial !== 'pt') initial = 'es';
+  if (initial !== 'es') setLang(initial);
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('seen'); io.unobserve(entry.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.rise').forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll('.rise').forEach(function (el) { el.classList.add('seen'); });
+  }
+})();
+</script>
+
+</body>
+</html>
